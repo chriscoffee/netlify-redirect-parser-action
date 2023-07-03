@@ -19,11 +19,9 @@ async function run() {
       return message;
     };
 
-    if (errors) {
+    if (errors.length === 1) {
       throw new Error(errors.map(errorMessage).join("\n\n"));
     }
-
-    core.debug(redirects);
 
   } catch (errors) {
     core.setFailed(errors.message);
