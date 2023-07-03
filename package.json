@@ -1,0 +1,24 @@
+{
+  "name": "netlify-redirect-parser-action",
+  "version": "1.0.0",
+  "description": "A GitHub Action to parse Netlify _redirects files and output if something is borkt",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chriscoffee/netlify-redirect-parser-action.git"
+  },
+  "scripts": {
+    "prepare": "ncc build index.js -o dist --source-map"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chriscoffee/netlify-redirect-parser-action/issues"
+  },
+  "homepage": "https://github.com/chriscoffee/netlify-redirect-parser-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@vercel/ncc": "^0.36.1",
+    "netlify-redirect-parser": "^14.1.3"
+  }
+}

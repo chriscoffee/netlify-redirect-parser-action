@@ -1,0 +1,5 @@
+name: "netlify-redirect-parser-action"
+description: "Parse _redirects file for netlify"
+runs:
+  using: "node16"
+  main: "dist/index.js"
