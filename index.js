@@ -9,7 +9,7 @@ const path = require("path");
 async function run() {
   try {
     const { redirects, errors } = await parseAllRedirects({
-      redirectsFiles: [path.resolve(__dirname, "_redirects")],
+      redirectsFiles: [path.resolve(path.resolve("static"), "_redirects")],
     });
 
     const errorMessage = function ({ message }) {
