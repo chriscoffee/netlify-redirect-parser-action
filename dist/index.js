@@ -7698,10 +7698,13 @@ const path = __nccwpck_require__(17);
  * Check devopsdays redirects file for errors
  */
 
+const redirectFilePath = path.resolve(path.resolve("static"), "_redirects");
+
 async function run() {
   try {
+    core.debug(`Checking redirect file in ${redirectFilePath}`);
     const { redirects, errors } = await parseAllRedirects({
-      redirectsFiles: [path.resolve(path.resolve("static"), "_redirects")],
+      redirectsFiles: [redirectFilePath],
     });
 
     const errorMessage = function ({ message }) {
@@ -7711,6 +7714,9 @@ async function run() {
     if (errors) {
       throw new Error(errors.map(errorMessage).join("\n\n"));
     }
+
+    core.debug(redirects);
+
   } catch (errors) {
     core.setFailed(errors.message);
   }
